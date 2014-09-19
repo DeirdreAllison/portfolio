@@ -1,0 +1,11 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  RunRailsCops: true
+  Include:
+    - Gemfile
+    - lib/tasks/*
+  Exclude:
+    - db/schema.rb
+    - vendor/**/*
