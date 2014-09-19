@@ -9,15 +9,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '5.4.0'
 gem 'pg'
-
-group :doc do
-  gem 'sdoc', '~> 0.4.0'
-end
-
 gem 'minitest-rails'
 
 group :test do
   gem 'minitest-rails-capybara'
+end
+
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
 end
 
 group :development do
