@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '5.4.0'
 gem 'pg'
 gem 'minitest-rails'
+gem 'rails_12factor'
 
 group :test do
   gem 'minitest-rails-capybara'
@@ -23,10 +24,6 @@ group :development do
   gem 'rails_layout'
   gem 'spring'
   gem 'rubocop'
-end
-
-group :production do
-  gem 'rails_12factor'
 end
 
 
