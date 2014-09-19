@@ -8,9 +8,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '5.4.0'
+gem 'pg'
 
 group :doc do
-gem 'sdoc', '~> 0.4.0'
+  gem 'sdoc', '~> 0.4.0'
 end
 
 gem 'minitest-rails'
@@ -20,15 +21,13 @@ group :test do
 end
 
 group :development do
-gem 'sqlite3'
-gem 'rails_layout'
-gem 'spring'
-gem 'rubocop'
+  gem 'rails_layout'
+  gem 'spring'
+  gem 'rubocop'
 end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
 end
 
 
