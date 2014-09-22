@@ -6,7 +6,9 @@ class DeleteArticleTest < Capybara::Rails::TestCase
                     body: "This is the most awesome post yet")
     visit articles_path
     # click_on "Destroy"
-    page.find('tr:last td a:last', text:"Destroy").click
+
+    page.find('tr:first td a:first', text:"Destroy").click
     page.wont_have_content "most awesome post"
+    save_and_open_page
   end
 end

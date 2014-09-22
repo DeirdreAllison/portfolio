@@ -11,9 +11,12 @@ gem 'foundation-rails', '5.4.0'
 gem 'pg'
 gem 'minitest-rails'
 gem 'rails_12factor'
+gem 'travis'
 
 group :test do
   gem 'minitest-rails-capybara'
+  gem 'launchy'
+  gem 'rake' #for travis from docs
 end
 
 group :doc do
