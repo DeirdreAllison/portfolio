@@ -1,8 +1,8 @@
-require "test_helper"
+require 'test_helper'
 
 class CheckForZurbTest < Capybara::Rails::TestCase
-  test "zurb foundation is being used" do
+  test 'zurb foundation is being used' do
     visit root_path
-    page.body.must_include "foundation_and_overrides"
+    page.has_css?('toggle-topbar menu-icon')
   end
 end
