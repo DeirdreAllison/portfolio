@@ -1,12 +1,19 @@
 language: ruby
 rvm:
-  - 2.1.2
+- 2.1.2
 env:
-  - DB=postgresql
+- DB=postgresql
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rake
 before_script:
-  - psql -c 'create database portfolio_test' -U postgres
-bundler_args: --binstubs=./bundler_stubs
+- psql -c 'create database portfolio_test' -U postgres
+bundler_args: "--binstubs=./bundler_stubs"
+deploy:
+  provider: heroku
+  api_key:
+    secure: dOn3L1zmPTj5T+FQFf+5hZ9axCZnWGZ8aMkoPitkRPsrKAzLPdRA4MkgIt0nbfPNbpzszbj0gVwed8tbrzrnrXGTe018Be39xIODjDpaBOC7XM0ElzcGDQ1VtQMeVUrDXV2STTdx4VKAU3FUR42lUcTfVtRZ3LIfmeGzFkZKaEM=
+  app: deirdre-allison-portfolio
+  on:
+    repo: DeirdreAllison/portfolio
