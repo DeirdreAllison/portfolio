@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
   def index
     @projects = Project.all
   end
@@ -18,11 +19,31 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @project.update_attributes(project_params)
+      redirect_to @project, notice: 'Changes successfully saved'
+    else
+      flash.now[:error] = 'Changes not saved'
+      render :edit
+    end
+  end
+
   def show
-    @project = Project.find(params[:id])
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path, notice: 'Project has been deleted'
   end
 
   private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:name, :description)
