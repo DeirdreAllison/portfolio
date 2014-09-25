@@ -17,6 +17,13 @@
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
+        <div><!-- begin flash div -->
+        <% flash.each do |key, value| %>
+          <div class="alert-box round <%= flash_class(key) %>">
+          <%= value %>
+          </div>
+        <% end %>
+      </div><!-- end flash div -->
     </main>
   </body>
 </html>
