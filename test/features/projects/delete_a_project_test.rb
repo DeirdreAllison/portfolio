@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 feature 'Delete a project' do
   scenario 'successfully delete project' do

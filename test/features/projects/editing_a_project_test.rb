@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 feature 'Editing a project' do
   scenario 'edit a project' do
