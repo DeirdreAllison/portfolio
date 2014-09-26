@@ -17,6 +17,12 @@
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
+       <% if current_user.present? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+       <% else %>
+        <%= link_to 'Sign Up', new_user_registration_path %>
+        <%= link_to 'Sign In', user_session_path %>
+       <% end %>
         <div><!-- begin flash div -->
         <% flash.each do |key, value| %>
           <div class="alert-box round <%= flash_class(key) %>">

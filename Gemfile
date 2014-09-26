@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '5.4.0'
 gem 'pg'
 gem 'minitest-rails'
+gem 'devise'
 # gem 'travis'
 
 group :test do
