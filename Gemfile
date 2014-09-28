@@ -11,7 +11,8 @@ gem 'foundation-rails', '5.4.0'
 gem 'pg'
 gem 'minitest-rails'
 gem 'devise'
-# gem 'travis'
+gem 'travis'
+gem 'coveralls', require: false
 
 group :test do
   gem 'minitest-rails-capybara'
