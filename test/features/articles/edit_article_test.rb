@@ -14,3 +14,4 @@ class EditArticleTest < Capybara::Rails::TestCase
     page.text.must_include 'This is a post'
   end
 end
+
