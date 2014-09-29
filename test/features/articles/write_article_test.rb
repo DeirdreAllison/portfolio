@@ -8,7 +8,7 @@ class WriteArticleTest < Capybara::Rails::TestCase
     fill_in 'Email', with: users(:one).email
     fill_in 'Password', with: users(:one).password
     click_on 'Log in'
-    save_and_open_page
+    # save_and_open_page
     fill_in 'Title', with: articles(:da).title
     fill_in 'Body', with: articles(:da).body
     click_on 'Create Article'
