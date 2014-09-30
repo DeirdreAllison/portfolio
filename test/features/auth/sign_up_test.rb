@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature'As a visitor I want to login so I know I am safe' do
+feature 'As a visitor I want to login so I know I am safe' do
   scenario 'sign up' do
     visit '/'
     click_on 'Sign Up'
@@ -13,4 +13,3 @@ feature'As a visitor I want to login so I know I am safe' do
     page.wont_have_content 'We were not able to sign you up'
   end
 end
-

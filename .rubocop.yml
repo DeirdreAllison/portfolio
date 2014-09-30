@@ -19,6 +19,8 @@ AllCops:
     - Gemfile
     - lib/tasks/*
   Exclude:
-    - db/schema.rb
+    - db/**/*
     - vendor/**/*
+    - config/**/*
+    - script/**/*
 

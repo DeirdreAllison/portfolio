@@ -13,6 +13,7 @@ gem 'minitest-rails'
 gem 'devise'
 gem 'pundit'
 # gem 'travis'
+# gem 'coveralls', require: false
 
 group :test do
   gem 'minitest-rails-capybara'

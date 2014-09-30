@@ -4,3 +4,18 @@ one:
 
 two:
   email: test2@example.com
+
+author:
+  email: author@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
+
+editor:
+  email: editor@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: editor
+
+writer:
+  email: writer@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
