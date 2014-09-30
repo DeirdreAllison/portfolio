@@ -8,7 +8,7 @@ class ArticlePolicy < ApplicationPolicy
       elsif @user.editor?
         scope.all
       else
-        scope.where(published true)
+        scope.where(published: true)
       end
     end
   end
