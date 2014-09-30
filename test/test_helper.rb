@@ -4,9 +4,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/rails/capybara'
 require 'minitest/pride'
-# require 'coveralls'
+require 'coveralls'
 
-# Coveralls.wear!
+Coveralls.wear!
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!

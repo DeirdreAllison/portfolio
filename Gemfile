@@ -12,13 +12,11 @@ gem 'pg'
 gem 'minitest-rails'
 gem 'devise'
 gem 'pundit'
-# gem 'travis'
-# gem 'coveralls', require: false
+gem 'coveralls', require: false
 
 group :test do
   gem 'minitest-rails-capybara'
   gem 'launchy'
-  gem 'rake' # for travis from docs
 end
 
 group :doc do
