@@ -32,11 +32,13 @@ feature 'As an author, I want to be sure only authorized people can write articl
   scenario 'editors can publish' do
     sign_in(:editor)
     visit new_article_path
-    page.must_have_field('Unpublished')
     fill_in 'Title', with: articles(:da).title
     fill_in 'Body', with: articles(:da).body
-    check 'Published'
     click_on 'Create Article'
+    page.text.must_include 'Unpublished'
+    click_on 'Edit'
+    check 'article_published'
+    click_on 'Update Article'
     page.text.must_include 'Status: Published'
   end
 end

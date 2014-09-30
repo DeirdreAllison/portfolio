@@ -1,11 +1,19 @@
 require 'test_helper'
 
-class DeleteArticleTest < Capybara::Rails::TestCase
-  test 'Delete article' do
-    Article.create(title: 'Extra special post',
-                   body: 'This is the most awesome post yet')
+feature 'As an editor I want to delete articles and ensure authors and viewers cannot' do
+  scenario 'Delete article' do
+    sign_in(:editor)
     visit articles_path
-    page.find('tr:last td a:last', text: 'Destroy').click
-    page.wont_have_content 'Extra special post'
+    page.must_have_content 'Destroy'
+  end
+
+  scenario 'authors cannot delete' do
+    sign_in(:author)
+    visit new_article_path
+    fill_in 'Title', with: articles(:da).title
+    fill_in 'Body', with: articles(:da).body
+    click_on 'Create Article'
+    visit articles_path
+    page.wont_have_content 'Destroy'
   end
 end

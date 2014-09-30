@@ -14,3 +14,8 @@ editor:
   email: editor@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: editor
+
+writer:
+  email: writer@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author

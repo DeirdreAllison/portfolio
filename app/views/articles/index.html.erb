@@ -15,8 +15,12 @@
         <td><%= article.title %></td>
         <td><%= article.body %></td>
         <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <% if policy(article).update? %>
+           <td><%= link_to 'Edit', edit_article_path(article) %></td>
+           <% end %>
+        <% if policy(article).destroy? %>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
