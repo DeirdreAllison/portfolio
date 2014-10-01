@@ -21,12 +21,12 @@ feature 'As an author or editor I want to approve comments to prevent spam' do
     sign_in(:editor)
     visit article_path(articles(:article_1))
     page.text.must_include 'Approved'
-    end
+  end
 
   scenario 'author approves comment' do
     sign_in(:author)
     visit articles_path(articles(:article_1))
     click_on 'Show'
     page.text.must_include 'Approved'
-    end
+  end
 end

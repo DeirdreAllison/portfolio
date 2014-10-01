@@ -13,6 +13,7 @@ gem 'minitest-rails'
 gem 'devise'
 gem 'pundit'
 gem 'coveralls', require: false
+gem 'omniauth-twitter'
 
 group :test do
   gem 'minitest-rails-capybara'
