@@ -1,0 +1,19 @@
+comment_1:
+  author: test commenter
+  author_url:
+  author_email:
+  user_ip:
+  user_agent:
+  referrer:
+  content: blah blah blah
+  approved: false
+
+comment_2:
+  author: another commenter
+  author_url:
+  author_email:
+  user_ip:
+  user_agent:
+  referrer:
+  content: lkfadljfadjfa
+  approved: true

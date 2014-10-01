@@ -8,17 +8,17 @@ class ArticlePolicy < ApplicationPolicy
       elsif @user.editor?
         scope.all
       else
-        scope.where(published true)
+        scope.where(published: :true)
       end
     end
   end
 
   def new?
-    @user.editor? || @user.author?
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   def create?
-    @user.author? || @user.editor
+    @user.present? && (@user.author? || @user.editor?)
   end
 
   def publish?
@@ -26,11 +26,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    @user.editor? || @user.author?
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   def destroy?
-    @user.editor?
+    @user.present? && @user.editor?
   end
 
   def permitted_attributes

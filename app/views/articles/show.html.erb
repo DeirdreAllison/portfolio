@@ -19,8 +19,27 @@
   <strong>Status:</b>
   <%= @article.published? ? 'Published' : 'Unpublished' %>
 </p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
 
-<%= link_to 'New Article', new_article_path if current_user.role == 'editor' || 'author' %>
+<% if policy(@article).create? %>
+  <%= link_to 'New Article', new_article_path %>
+  <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
+
+<%= render 'comment' %>
+
+<h1>Comments</h1>
+
+<table>
+  <tbody>
+    <% @article.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.author %></td>
+        <td><%= comment.content %></td>
+        <% if current_user.present? && (current_user.editor? || current_user.author?) %>
+          <td><%= link_to 'Edit', edit_article_comment_path(@article, comment) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

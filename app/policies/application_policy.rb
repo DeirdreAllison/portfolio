@@ -2,7 +2,7 @@ class ApplicationPolicy
   attr_accessor :user, :article
 
   def initialize(user, article)
-    @user = user
+    @user = user || User.new
     @article = article
   end
 
@@ -42,7 +42,7 @@ class ApplicationPolicy
     attr_reader :user, :scope
 
     def initialize(user, scope)
-      @user = user
+      @user = user || User.new
       @scope = scope
     end
 

@@ -1,3 +1,9 @@
 da:
   title: Deirdre Allison
   body: The person who created this!
+
+article_1:
+  title: article
+  body: This is an article
+  author: author
+  published: true

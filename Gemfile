@@ -27,6 +27,8 @@ group :development do
   gem 'rails_layout'
   gem 'spring'
   gem 'rubocop', '~> 0.26.1'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do

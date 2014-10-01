@@ -1,0 +1,34 @@
+<%= form_for([@article, @comment]) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_area :author %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <% if current_user.present? && (current_user.editor? || current_user.author?) %>
+    <div class="row collapse">
+      <div class="small-3 columns"
+        <%= f.label :approved, class: "right inline", title: "Is this article approved?", data: {tooltip: true } %><br>
+      </div>
+      <div class="small-9 columns">
+        <%= f.check_box :approved %>
+      </div>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

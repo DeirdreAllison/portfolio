@@ -19,7 +19,7 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
- <% if current_user.role == 'editor' %>
+ <% if current_user.present? && current_user.role == 'editor' %>
   <div class="row collapse">
     <div class="small-3 columns"
       <%= f.label :published, class: "right inline", title: "Is this article published?", data: {tooltip: true } %><br>
