@@ -10,12 +10,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '5.4.0'
 gem 'pg'
 gem 'minitest-rails'
-# gem 'travis'
+gem 'ckeditor_rails'
 
 group :test do
   gem 'minitest-rails-capybara'
   gem 'launchy'
-  gem 'rake' # for travis from docs
 end
 
 group :doc do
